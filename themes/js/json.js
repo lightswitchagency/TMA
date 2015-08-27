@@ -40,6 +40,7 @@ $(document).ready(function () {
 
         }
         else {
+            alert("You else here "+ remote_url);
             $.ajax({
                 url: remote_url + '&call_function=log_user_inn&username=' + username + '&password=' + password,
                 dataType: 'json',
@@ -55,6 +56,7 @@ $(document).ready(function () {
                         $(".notification").html(" Your Credentials are wrong.");
                     }
                     else {
+                        alert("You are in "+ remote_url);
                         for (var i in login) {
                             var role = login[i].roles;
                             if ((role == 'administrator') || (role == 'store-manager')) {
