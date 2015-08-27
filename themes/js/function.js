@@ -183,7 +183,7 @@ var loading_overlay ='<div id="loaderWrapper" class="overlay"><div id="page-load
 var row_start = "<div class='row'>"
 var row_end = "</div>"
 
-
+/*
 var db;
 var dbCreated = false;
 var id;
@@ -219,4 +219,4 @@ function checkConnection() {
 
 
 
-}
+}*/
