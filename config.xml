@@ -15,9 +15,11 @@
     <author href="http:creativeyr.co.ke" email="b.mwangi@creativeyr.co.ke">Boniface Kibicho @CYR</author>
     <access origin="*" />
     <feature name="http://api.phonegap.com/1.0/network"/>
-    <feature name="Notification">
+   
+   <!--<feature name="Notification">
         <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
     </feature>
+	-->
 
     <preference name='phonegap-version' value='cli-5.1.1' />
     <preference name="permissions"                value="none"/>
@@ -35,7 +37,7 @@
     <preference name="disable-cursor"             value="false" />          <!-- blackberry: prevents a mouse-icon/cursor from being displayed on the app -->
     <preference name="android-installLocation"    value="preferExternal" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
 
-    <gap:plugin name="org.apache.cordova.contacts" />
+    <!-- <gap:plugin name="org.apache.cordova.contacts" />
     <gap:plugin name="org.apache.cordova.device" />
     <gap:plugin name="org.apache.cordova.device-orientation" />
     <gap:plugin name="org.apache.cordova.dialogs" />
@@ -47,6 +49,7 @@
     <gap:plugin name="org.apache.cordova.splashscreen" />
     <gap:plugin name="org.apache.cordova.vibration" />
     <gap:plugin name="de.appplant.cordova.plugin.local-notification" version="0.8.1" />
+	-->
 
 
 	
