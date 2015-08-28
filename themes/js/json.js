@@ -49,7 +49,7 @@ $(document).ready(function () {
                     $('.login-register').append(loading_overlay);
                 },
                 complete: function () {
-                 //   $('.login-register .overlay').remove();
+                   $('.login-register .overlay').remove();
                 },
                 success: function (json)
                 {
@@ -60,7 +60,8 @@ $(document).ready(function () {
                     else {
                         for (var i in login) {
                             var role = login[i].roles;
-                            if ((role == 'administrator') || (role == 'store-manager')) {
+                            if ((role == 'administrator') || (role == 'store-manager'))
+                            {
 
                                 $('#s_user_name').val(username);
                                 $('#s_user_id').val(login[i].data.ID);
