@@ -49,9 +49,11 @@ $(document).ready(function () {
                     $('.login-register').append(loading_overlay);
                 },
                 complete: function () {
-                    $('.login-register .overlay').remove();
+                 //   $('.login-register .overlay').remove();
                 },
                 success: function (json) {
+
+
                     var login = json;
                     if (login[0] === "") {
                         $(".notification").html(" Your Credentials are wrong.");
