@@ -37,7 +37,7 @@ $(document).ready(function () {
         var username = $("#username").val();
         if ((url == "") || (username == "") || (password == ""))
         {
-            $(".notification").html(" All the fields are required.");
+          //  $(".notification").html(" All the fields are required.");
             alert("All the fields are required.");
         }
         else {
@@ -49,10 +49,17 @@ $(document).ready(function () {
                     $('.login-register').append(loading_overlay);
                 },
                 complete: function () {
+
                    $('.login-register .overlay').remove();
                 },
                 success: function (json)
                 {
+
+                    $('.login-register .overlay').remove();
+                },
+                success: function (json)
+                {
+
                     var login = json;
                     if (login[0] === "") {
                         $(".notification").html(" Your Credentials are wrong.");
