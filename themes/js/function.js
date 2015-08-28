@@ -178,8 +178,8 @@ var product_icon ='<span class="fa-stack fa-2x pull-left m-r-sm"> ' +
     ' <i class="fa fa-dropbox fa-stack-1x text-white"></i>' +
     ' </span><small class="text-muted m-b block">PRODUCTS</small>';
 
-//var loading_overlay ='<div class="overlay">    <i class="fa fa-refresh fa-spin"></i>    </div>';
-var loading_overlay ='<div id="loaderWrapper" class="overlay"><div id="page-loader"><div class="outter dark-border" style="">			<div class="mid dark-border" style=""></div>		</div></div></div>';
+ var loading_overlay ='<div class="overlay">    <i class="fa fa-refresh text-total-red fa-spin"></i>    </div>';
+//var loading_overlay ='<div id="loaderWrapper" class="overlay"><div id="page-loader"><div class="outter dark-border" style="">			<div class="mid dark-border" style=""></div>		</div></div></div>';
 var row_start = "<div class='row'>"
 var row_end = "</div>"
 
