@@ -51,15 +51,13 @@ $(document).ready(function () {
                 complete: function () {
                  //   $('.login-register .overlay').remove();
                 },
-                success: function (json) {
-
-
+                success: function (json)
+                {
                     var login = json;
                     if (login[0] === "") {
                         $(".notification").html(" Your Credentials are wrong.");
                     }
                     else {
-                      //  alert("You are in "+ remote_url);
                         for (var i in login) {
                             var role = login[i].roles;
                             if ((role == 'administrator') || (role == 'store-manager')) {
