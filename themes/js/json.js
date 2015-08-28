@@ -35,7 +35,8 @@ $(document).ready(function () {
         var url = $("#shopurl").val();
         var password = $("#password").val();
         var username = $("#username").val();
-        if ((url == "") || (username == "") || (password == "")) {
+        if ((url == "") || (username == "") || (password == ""))
+        {
             $(".notification").html(" All the fields are required.");
 
         }
