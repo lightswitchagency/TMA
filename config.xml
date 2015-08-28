@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.phonegap.totalkenyashop"
+        id        = "com.phonegap.totalkenyashopinternal"
         versionCode= "16"
         version = "1.0.6">
 
@@ -20,10 +20,14 @@
     <preference name="fullscreen"       value="false" />
     <preference name="show-splash-screen-spinner" value="true" />
     <icon src="icon.png" />
+
+
     <icon src="images/icon-36.png"   gap:platform="android"    gap:density="ldpi" />
     <icon src="images/icon-48.png"   gap:platform="android"    gap:density="mdpi" />
     <icon src="images/icon-72.png"   gap:platform="android"    gap:density="hdpi" />
     <icon src="images/icon-96.png"  gap:platform="android"    gap:density="xhdpi" />
+
     <gap:splash src="splash.png" />
+    <gap:plugin name="de.appplant.cordova.plugin.local-notification" version="0.8.1" />
 
 </widget>
