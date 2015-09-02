@@ -222,11 +222,6 @@
     color: #ffffff !important;
 }
 
-
-.text-total-red
-{
-  color:#DD1835 !important;
-}
 /*Hide elements by display none only*/
 .hide {
     display: none !important;
@@ -2115,6 +2110,7 @@ textarea.form-control {
 
 .form-group {
     margin-bottom: 15px;
+    margin-top: 15px;
 }
 
 .radio, .checkbox {
@@ -13072,7 +13068,7 @@ table.text-center, table.text-center td, table.text-center th {
     text-align: right;
 }
 
-
+/*
 .overlay, .overlay-wrapper > .overlay, .box > .loading-img, .overlay-wrapper > .loading-img {
     height: 100%;
     left: 0;
@@ -13101,7 +13097,7 @@ table.text-center, table.text-center td, table.text-center th {
     background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
 }
 
-/*
+
 .outter {
     animation: 1.3s linear 0s normal none infinite running rotate;
     border-left: 5px solid;

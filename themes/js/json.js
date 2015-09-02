@@ -35,13 +35,11 @@ $(document).ready(function () {
         var url = $("#shopurl").val();
         var password = $("#password").val();
         var username = $("#username").val();
-        if ((url == "") || (username == "") || (password == ""))
-        {
-          //  $(".notification").html(" All the fields are required.");
-            alert("All the fields are required.");
+        if ((url == "") || (username == "") || (password == "")) {
+            $(".notification").html(" All the fields are required.");
+
         }
         else {
-
             $.ajax({
                 url: remote_url + '&call_function=log_user_inn&username=' + username + '&password=' + password,
                 dataType: 'json',
@@ -49,17 +47,9 @@ $(document).ready(function () {
                     $('.login-register').append(loading_overlay);
                 },
                 complete: function () {
-
-                   $('.login-register .overlay').remove();
-                },
-                success: function (json)
-                {
-
                     $('.login-register .overlay').remove();
                 },
-                success: function (json)
-                {
-
+                success: function (json) {
                     var login = json;
                     if (login[0] === "") {
                         $(".notification").html(" Your Credentials are wrong.");
@@ -67,8 +57,7 @@ $(document).ready(function () {
                     else {
                         for (var i in login) {
                             var role = login[i].roles;
-                            if ((role == 'administrator') || (role == 'store-manager'))
-                            {
+                            if ((role == 'administrator') || (role == 'store-manager')) {
 
                                 $('#s_user_name').val(username);
                                 $('#s_user_id').val(login[i].data.ID);
@@ -97,14 +86,11 @@ $(document).ready(function () {
                                 $("#mainmenu").addClass("hidden");
                             }
                             else if ((role == 'customer') || (role == 'subscriber')) {
-                           //     $(".notification").html(" Your are not allowed to do this. ");
-                             //   $(".notification").html(" Your are not allowed to do this. ");
-
-                                alert("Your are not allowed to do this.");
+                                $(".notification").html(" Your are not allowed to do this. ");
+                                $(".notification").html(" Your are not allowed to do this. ");
                             }
-                            else
-                            {
-                               // $(".notification").html(" Your are not allowed to do this. ");
+                            else {
+                                $(".notification").html(" Your are not allowed to do this. ");
                             }
                         }
                     }
@@ -411,7 +397,7 @@ $(document).on("pagebeforeshow", "#orders-inner", function () {
             var order_products = json.order_products;
             var assigned_delivery = json.order_info.assigned_delivery;
 
-            var name = "<table class='table table-striped table-condensed'><tbody>";
+            var name = "<table class='table table-striped2 table-condensed'><tbody>";
             name += "<tr> <td>  <span class='name'> <strong> NAME :</strong> </span></td> <td> <span> " + order_info.customer + "</span></td></tr>";
             name += "<tr> <td><span class='name" + order_info.status_code + "'> <strong> ORDER STATUS :</strong> </span></td> <td> <span> " + order_info.status + "</span></td></tr>";
             name += "<tr> <td><span class='name'> <strong> ORDER NUMBER :</strong>  </span></td> <td> <span> #" + order_info.id_order + "</span> </td></tr>";
@@ -427,7 +413,7 @@ $(document).on("pagebeforeshow", "#orders-inner", function () {
             {
                 if (order_info.status_code == 'wc-delv-await')
                 {
-                    name += "<tr> <td><a  class='  btn btn-sm bg-red' data-transition='slide'    href='orders-inner-assign.html?id=" + order_info.id_order + "'  > Assign Order  </a>  </td> </tr>"
+                    name += "<tr> <td><a id='assignorderbtn'  class='  btn btn-sm bg-red' data-transition='slide'    href='orders-inner-assign.html?id=" + order_info.id_order + "'  > Assign Order  </a>  </td> </tr>"
                 }
                 //('publish','wc-pending','wc-processing','wc-on-hold','wc-completed','wc-cancelled','wc-refunded','wc-failed')
                 else  if
@@ -506,7 +492,7 @@ $(document).on("pagebeforeshow", "#orders-inner", function () {
             $('#orders-inner #history').html(order_history);
 
 
-           var products =  "<table class='table table-orders table-condensed'> <tbody><tr> <th >  ORDERED PRODUCTS  </th> </tr>";
+           var products =  "<table class='table table-orders table-striped table-condensed'> <tbody><tr> <th >  ORDERED PRODUCTS  </th> </tr>";
             for (var i in order_products) {
                 products += '<tr>  <td> ' +
                     "<div class='col-sm-3 col-xs-3'>" +

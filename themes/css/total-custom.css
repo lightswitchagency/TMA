@@ -1704,7 +1704,7 @@ table.text-center, table.text-center td, table.text-center th {
 
 
 .table-orders tr{padding: 12px;}
-#products-inner h3{text-align: center;}
+#products-inner h3{text-align: center; margin: 0;}
 
 .direct-chat-text {
     border-radius: 5px;
@@ -3785,7 +3785,10 @@ table.text-center, table.text-center td, table.text-center th {
 overflow: inherit; word-break: normal; word-wrap: normal; padding: 0; white-space: normal; margin-top: -10px !important;}
 
 
-.order-status{font-weight: 600;}
+#order-status-btn, #assignorderbtn, #order-assign-btn{background: #E10031 !important;}
+#order-assign-btn:hover{color: #fff !important;}
+
+.checkbox-inline{margin: -3px 5px 0px 0px !important;}
 
 .ui-btn {
     font-size: 16px;
