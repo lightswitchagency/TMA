@@ -963,7 +963,7 @@ a:hover, a:active, a:focus {
 }
 
 .info-box small {
-    font-size: 12px
+    font-size: 14px
 }
 
 .info-box .progress {
@@ -998,15 +998,27 @@ a:hover, a:active, a:focus {
 
 .info-box-content {
     padding: 5px 10px;
-    margin-left: 90px;
+    margin-left: 70px;
     min-height: 56px;
+    display: flex;
+    align-items: center;
 }
 
 .info-box-number {
     display: block;
-    font-weight: bold;
-    font-size: 18px
+    font-size: 18px;
+    
 }
+
+.dashbox .info-box-number {
+    font-weight: bold;
+    margin-left: 25px;
+}
+
+
+.orderstatustitle{font-size: 18px;
+font-weight: 600;
+margin-bottom: 20px; }
 
 .progress-description, .info-box-text {
     display: block;
@@ -3780,12 +3792,12 @@ table.text-center, table.text-center td, table.text-center th {
 .ui-header{background-color:#dd1835 !important; width:100%; padding:20px 0 15px; border: none;}
 
 .ui-header .ui-title{text-align: center;
-    font-size: 2em; width: 80%; margin: 0px 13%;
+    font-size: 22px; width: 80%; margin: 0px 13%;
     color: #fff;text-overflow: unset;
 overflow: inherit; word-break: normal; word-wrap: normal; padding: 0; white-space: normal; margin-top: -10px !important;}
 
 
-#order-status-btn, #assignorderbtn, #order-assign-btn{background: #E10031 !important;}
+#order-status-btn, #assignorderbtn, #order-assign-btn{background: #E10031 !important; font-size: 16px;}
 #order-assign-btn:hover{color: #fff !important;}
 
 .checkbox-inline{margin: -3px 5px 0px 0px !important;}
@@ -3878,10 +3890,10 @@ border-bottom: 12px solid #DEDADA;}
 
 .tabs .fa{font-size: 24px; padding-top:6px;}
 
-.table.table-condensed td a span, #products-inner span{font-size:14px; line-height: 24px;}
+.table.table-condensed td a span, #products-inner span{font-size:14px; line-height: 24px; color: #717171}
 #products-inner .cont-div.list-content{clear: left; margin: 0 auto;}
 
-.ui-navbar li .ui-btn{ font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif; font-weight: 300;font-size:14px;}
+.ui-navbar li .ui-btn{ font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif; font-weight: 300;font-size:13px;}
 
 .ui-navbar ul li{display: table;}
 .ui-navbar ul li a{display: table-cell !important; vertical-align: middle;}
@@ -3900,5 +3912,42 @@ border-bottom: 12px solid #DEDADA;}
     left: 10px;
     position: absolute;
 }
+
+
+#customer-details .table-orders{
+    background:#fff;
+}
+#customers-inner .table-orders tr, #tabs  .table-orders tr, #customer-details tr, #products .table-orders tr,#orders tr{border-bottom: 1px solid #d6d6d6;}
+#products-inner h3.innerproducttitle{font-size: 18px;margin-bottom: 10px;font-weight: bold;}
+.order-nav-icon .fa{font-size: 42px;}
+
+table, .order-status strong{color: #717171;}
+
+#reason{min-height: 100px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

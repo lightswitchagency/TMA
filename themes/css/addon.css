@@ -1860,9 +1860,12 @@ th {
 }
 
 .table {
-    width: 100%;
+    width: 90%;
     margin-bottom: 20px;
     margin-top: 20px;
+     background: #fff;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
@@ -13068,7 +13071,7 @@ table.text-center, table.text-center td, table.text-center th {
     text-align: right;
 }
 
-/*
+
 .overlay, .overlay-wrapper > .overlay, .box > .loading-img, .overlay-wrapper > .loading-img {
     height: 100%;
     left: 0;
@@ -13084,13 +13087,13 @@ table.text-center, table.text-center td, table.text-center th {
 }
 
 .overlay > .fa, .overlay-wrapper .overlay > .fa {
-    color: #000;
     font-size: 30px;
     left: 50%;
     margin-left: -15px;
     margin-top: -15px;
     position: absolute;
     top: 50%;
+    color:#d7233b;
 }
 
 .overlay.dark, .overlay-wrapper .overlay.dark {
@@ -13138,8 +13141,8 @@ table.text-center, table.text-center td, table.text-center th {
         transform: rotate(360deg);
     }
 }
-*/
 
+/*
 #loaderWrapper {
     background: rgba(255, 255, 255, 0.7) none repeat scroll 0 0;
     height: 100%;
@@ -13204,3 +13207,4 @@ table.text-center, table.text-center td, table.text-center th {
         transform: rotate(360deg);
     }
 }
+*/

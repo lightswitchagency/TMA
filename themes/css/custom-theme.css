@@ -948,7 +948,7 @@ html body .ui-group-theme-a .ui-bar-inherit {
 .ui-page-theme-a .ui-panel-wrapper {
     background-color: 			#f9f9f9 /*{a-page-background-color}*/;
     border-color:	 		#bbb /*{a-page-border}*/;
-    color: 					#333 /*{a-page-color}*/;
+    
    
 }
 /* Body: Read-only lists, text inputs, collapsible content */
@@ -4720,3 +4720,43 @@ html .ui-popup .ui-field-contain > label + .ui-flipswitch {
     position: relative;/* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed") */
     padding: .2em;
 }
+
+
+.app-title { text-transform: uppercase; color: #525252; margin-top: 40px !important; float:left; clear:left; width:100%; text-align: center}
+.app-title label{font-size:15px; font-weight: 600}
+.app-title label:after {
+    border-bottom: 2px solid #D7223A;
+padding-bottom: 6px;
+width: 15%;
+margin: 0px auto;
+content: "";
+display: table;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

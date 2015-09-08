@@ -1,5 +1,5 @@
 
-var remote_url = "http://cre8ivedge.net/totalshop/limuru-rd/?connector=mobileassistant&hash=test";
+//var remote_url = "http://cre8ivedge.net/totalshop/limuru-rd/?connector=mobileassistant&hash=test";
 /******* DATES ****************/
 function getTodaysDate()
 {
@@ -69,7 +69,7 @@ $.fn.tabs = function() {
 /******* dashboard  ****************/
 function fillDashboard(dashboard)
 {
-    loop = '<div class="row ">'+
+    loop = '<div class="row dashbox">'+
         '<div class="col-xs-12 col-sm-6"><div class="info-box">    ' +
         '   <span class="info-box-icon bg-aqua"> <i class="fa  fa-ticket"></i></span>' +
         '           <div class="info-box-content">  ' +
@@ -117,12 +117,12 @@ function fillDashboard(dashboard)
         ' </div>';
 
 
-
-
-    loop+= '<div class="row"><div class="col-xs-12"><h3 class="small"> Orders by Status</h3> </div> </div>';
-
-    loop+= '<div class="row">' ;
     var order_stats_category = dashboard.order_status_stats;
+    if(order_stats_category.length>0) {
+        loop += '<div class="row"><div class="col-xs-12"><h3 class="small orderstatustitle"> Orders by Status</h3> </div> </div>';
+    }
+    loop+= '<div class="row">' ;
+
     for ( var i in order_stats_category)
     {
 
@@ -178,45 +178,7 @@ var product_icon ='<span class="fa-stack fa-2x pull-left m-r-sm"> ' +
     ' <i class="fa fa-dropbox fa-stack-1x text-white"></i>' +
     ' </span><small class="text-muted m-b block">PRODUCTS</small>';
 
-//var loading_overlay ='<div class="overlay">    <i class="fa fa-refresh fa-spin"></i>    </div>';
-var loading_overlay ='<div id="loaderWrapper" class="overlay"><div id="page-loader"><div class="outter dark-border" style="">			<div class="mid dark-border" style=""></div>		</div></div></div>';
+var loading_overlay ='<div class="overlay">    <i class="fa fa-refresh fa-spin"></i>    </div>';
+//var loading_overlay ='<div id="loaderWrapper" class="overlay"><div id="page-loader"><div class="outter dark-border" style="">			<div class="mid dark-border" style=""></div>		</div></div></div>';
 var row_start = "<div class='row'>"
 var row_end = "</div>"
-
-
-var db;
-var dbCreated = false;
-var id;
-var uuid;
-var value;
-document.addEventListener("deviceready", onDeviceReady, false);
-
-function onDeviceReady() {
-
-    checkConnection();
-
-}
-function checkConnection() {
-
-    var networkState = navigator.connection.type;
-    var states = {};
-    states[Connection.UNKNOWN]  = 'Unknown connection';
-    states[Connection.ETHERNET] = 'Ethernet connection';
-    states[Connection.WIFI]     = 'WiFi connection';
-    states[Connection.CELL_2G]  = 'Cell 2G connection';
-    states[Connection.CELL_3G]  = 'Cell 3G connection';
-    states[Connection.CELL_4G]  = 'Cell 4G connection';
-    states[Connection.CELL]     = 'Cell generic connection';
-    states[Connection.NONE]     = 'No network connection';
-
-    if(navigator.network.connection.type == Connection.NONE){
-        alert('No network connection');
-    }else{
-        // alert('Connection type: ' + states[networkState]);
-
-    }
-
-
-
-
-}

@@ -11,42 +11,81 @@
 [class^="flaticon-"]:before, [class*=" flaticon-"]:before,
 [class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
 	font-family: Flaticon;
-        font-size: 20px;
+        font-size: 25px;
 font-style: normal;
 margin-left: 20px;
-}.flaticon-add133:before {
+}.flaticon-arrowhead7:before {
 	content: "\e000";
 }
-.flaticon-arrow487:before {
+.flaticon-at9:before {
 	content: "\e001";
 }
-.flaticon-check-mark2:before {
+.flaticon-back28:before {
 	content: "\e002";
 }
-.flaticon-checked1:before {
+.flaticon-chevrons:before {
 	content: "\e003";
 }
-.flaticon-delivery36:before {
+.flaticon-closed:before {
 	content: "\e004";
 }
-.flaticon-envelope32:before {
+.flaticon-concert1:before {
 	content: "\e005";
 }
-.flaticon-group44:before {
+.flaticon-credit-card21:before {
 	content: "\e006";
 }
-.flaticon-list40:before {
+.flaticon-credit20:before {
 	content: "\e007";
 }
-.flaticon-notification3:before {
+.flaticon-delivery36:before {
 	content: "\e008";
 }
-.flaticon-padlock50:before {
+.flaticon-envelope91:before {
 	content: "\e009";
 }
-.flaticon-piechart2:before {
+.flaticon-group44:before {
 	content: "\e00a";
 }
-.flaticon-viewing:before {
+.flaticon-home168:before {
 	content: "\e00b";
+}
+.flaticon-info28:before {
+	content: "\e00c";
+}
+.flaticon-left222:before {
+	content: "\e00d";
+}
+.flaticon-link74:before {
+	content: "\e00e";
+}
+.flaticon-logout20:before {
+	content: "\e00f";
+}
+.flaticon-marker20:before {
+	content: "\e010";
+}
+.flaticon-network60:before {
+	content: "\e011";
+}
+.flaticon-padlock78:before {
+	content: "\e012";
+}
+.flaticon-phonecall24:before {
+	content: "\e013";
+}
+.flaticon-piechart2:before {
+	content: "\e014";
+}
+.flaticon-right11:before {
+	content: "\e015";
+}
+.flaticon-right127:before {
+	content: "\e016";
+}
+.flaticon-telephone34:before {
+	content: "\e017";
+}
+.flaticon-truck70:before {
+	content: "\e018";
 }
