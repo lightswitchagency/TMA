@@ -50,10 +50,7 @@
     <icon src="images/icon-36.png"   gap:platform="android"    gap:density="ldpi" />
     <icon src="images/icon-48.png"   gap:platform="android"    gap:density="mdpi" />
     <icon src="images/icon-72.png"   gap:platform="android"    gap:density="hdpi" />
-    <icon src="images/icon-96.png"  gap:platform="android"    gap:density="xhdpi" />
-
-
-    <!--
+    <icon src="images/icon-96.png"  gap:platform="android"    gap:density="xhdpi" />    <!--
 
     <gap:plugin name="de.appplant.cordova.plugin.local-notification" version="0.8.1" />
 
