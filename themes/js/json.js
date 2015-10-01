@@ -1,5 +1,5 @@
 var HASH = "aHR0cDovL2NyZThpdmVkZ2UubmV0L3RvdGFsc2hvcC8=";
-var ROOT_URL = "http://cre8ivedge.net/totalshop/?connector=mobileassistant&hash=" + HASH;
+var ROOT_URL = "http://shop.total.co.ke/beta/?connector=mobileassistant&hash=" + HASH;
 var APPENDURL = "?connector=mobileassistant&hash=" + HASH;
 var remote_url = "";
 
@@ -285,20 +285,20 @@ $(document).ready(function () {
                 $('#customers  .overlay').remove();
             },
             success: function (json) {
-                loop = "<table class='table table-condensed'><tbody>";
+                loop = "<table class='table  '><tbody>";
                 var customers = json.customers;
                 for (var i in customers) {
 
-                    loop += '<tr>  <td> <a class="id" data-transition="flip" data-id="' + customers[i].id_customer + '" href="customers-inner.html?id=' + customers[i].id_customer + '" > ' +
+                    loop += '<tr>  <td>' +
+                        ' <a class="id" data-transition="flip" data-id="' + customers[i].id_customer + '" href="customers-inner.html?id=' + customers[i].id_customer + '" > ' +
                         '<div class="col-sm-10 col-xs-10">' +
-                        '<span class="customername clearfix"><strong> Name:</strong>' + customers[i].display_name + '</span>' +
-                        '<span class="order-number clearfix"><strong> Customer ID:</strong> #' + customers[i].id_customer + '</span>' +
-                        '<span class="order-status clearfix"><strong> Email Address:</strong> ' + customers[i].email + '</span>' +
-                        '<span class="order-amount clearfix"><strong> Orders:</strong> ' + customers[i].total_orders + '</span>' +
-                        '<span class="order-products clearfix "><strong> Reg. Date:</strong> ' + customers[i].date_add + '</span>' +
+                        '<div class="col-sm-6 col-xs-6"><span class="customername clearfix"><strong> Name:</strong> </span> </div> <div class="col-sm-6  col-xs-6"> <span class="detail"> ' + customers[i].display_name + '</span></div>' +
+                        '<div class="col-sm-6 col-xs-6"><span class="order-number clearfix"><strong> Customer ID:</strong> </span> </div> <div class="col-sm-6  col-xs-6"> <span class="detail"> #' + customers[i].id_customer + '</span></div>' +
+                        '<div class="col-sm-6 col-xs-6"><span class="order-status clearfix"><strong> Email Address:</strong> </span> </div> <div class="col-sm-6  col-xs-6"> <span class="detail"> ' + customers[i].email + '</span></div>' +
+                        '<div class="col-sm-6 col-xs-6"><span class="order-amount clearfix"><strong> Orders:</strong> </span> </div> <div class="col-sm-6  col-xs-6"> <span class="detail">' + customers[i].total_orders + '</span></div>' +
+                        '<div class="col-sm-6 col-xs-6"><span class="order-products clearfix "><strong> Reg. Date:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detail">' + customers[i].date_add + '</span></div>' +
                         '</div>' +
-                        '<div class="col-sm-2 col-xs-2">' +
-
+                        '<div class="col-sm-2 text-right col-xs-2">' +
                         '<span class="order-nav-icon clearfix"><i class="fa fa-angle-right"></i> </span>' +
                         '</div>' +
                         '  </a> </td> </tr>';
@@ -348,7 +348,7 @@ $(document).ready(function () {
 
                 $('#customers-inner #customer-details').html(name);
 
-                var billingaddress = "<table class='table table-orders table-condensed'> <tbody><tr> <th colspan='2'>  Billing Address    </th> </tr>";
+                var billingaddress = "<table class='table table-orders  '> <tbody><tr> <th colspan='2'>  Billing Address    </th> </tr>";
                 ;
                 billingaddress += "<tr> <td><span class='name'> Name  :  </span></td> <td> <span>  " + billing_info.b_firstname + '  ' + billing_info.b_lastname + "</span></td></tr>";
                 billingaddress += "<tr> <td><span class='name'> Email   :  </span> </td> <td> <span> " + billing_info.b_email + "</span> </td></tr>";
@@ -360,7 +360,7 @@ $(document).ready(function () {
                     "</tbody></table>";
                 $('#customers-inner #billing').html(billingaddress);
 
-                var shippingaddress = "<table class='table table-orders table-condensed'> <tbody><tr> <th colspan='2'>  Delivery Address   </th> </tr>";
+                var shippingaddress = "<table class='table table-orders  '> <tbody><tr> <th colspan='2'>  Delivery Address   </th> </tr>";
                 shippingaddress += "<tr> <td><span class='name'> Name : </span> </td> <td>  <span> " + shipping_info.s_firstname + '  ' + shipping_info.s_lastname + "    </span> </td></tr>";
                 shippingaddress += "<tr> <td><span class='name'> Address :  </span> </td> <td>  <span> " + shipping_info.s_address_1 + " </span>  </td></tr>";
                 shippingaddress += "<tr> <td><span class='name'>     </span></td> <td>  <span> " + shipping_info.s_address_2 + "</span>  </td></tr>";
@@ -371,15 +371,15 @@ $(document).ready(function () {
                 $('#customers-inner #shipping').html(shippingaddress);
 
 
-                loop_orders = "<table class='table table-condensed'><tbody> <tr> <th>CUSTOMER ORDERS  </th></tr>";
+                loop_orders = "<table class='table  '><tbody> <tr> <th>CUSTOMER ORDERS  </th></tr>";
                 var orders = customer_orders;
                 for (var i in orders) {
                     loop_orders += '<tr>  <td> <a class="id" data-transition="flip" data-id="' + orders[i].id_order + '" href="orders-inner.html?id=' + orders[i].id_order + '" > ' +
                         '<div class="col-sm-10 col-xs-10">' +
-                        '<span class="order-number clearfix"><strong> Order Id:</strong> #' + orders[i].id_order + '</span>' +
-                        '<span class="order-status clearfix ' + orders[i].order_status_id + ' "> ' + orders[i].ord_status + '</span>' +
-                        '<span class="order-date clearfix"> ' + orders[i].date_add + '</span>' +
-                        '<span class="order-amount clearfix">' + orders[i].total_paid + '  ' + orders[i].currency_code + '</span>' +
+                        '<div class="col-xs-6 col-sm-6"><span class="order-number clearfix"><strong> Order Id:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed"> #' + orders[i].id_order + '</span> </div>' +
+                        '<div class="col-xs-6 col-sm-6"><span class="order-status clearfix ' + orders[i].order_status_id + ' "> <strong> Order Status:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed">  ' + orders[i].ord_status + '</span></div>' +
+                        '<div class="col-xs-6 col-sm-6"><span class="order-date clearfix"> <strong>Date Added:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed"> ' + orders[i].date_add + '</span></div>' +
+                        '<div class="col-xs-6 col-sm-6"><span class="order-amount clearfix"> <strong> Amount:</strong></span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed"> ' + orders[i].total_paid + '  </span></div>' +
 
                         '</div>' +
                         '<div class="col-sm-2 col-xs-2">' +
@@ -405,24 +405,25 @@ $(document).ready(function () {
                 $('#orders .list-content .overlay').remove();
             },
             success: function (json) {
-                loop = "<table class='table table-condensed'><tbody>";
+                loop = "<table class='table  '><tbody>";
                 var orders = json.orders;
                 for (var i in orders) {
 
                     loop += '<tr>  <td> <a class="id" data-transition="flip" data-id="' + orders[i].id_order + '" href="orders-inner.html?id=' + orders[i].id_order + '" > ' +
                         '<div class="col-sm-10 col-xs-10">' +
-                        '<span class="order-number clearfix"><strong>Order Id:</strong> ' + orders[i].id_order + '</span>' +
-                        '<span class="customername clearfix"><strong>Customer Name:</strong> ' + orders[i].customer + '</span>' +
-                        '<span class="order-status clearfix ' + orders[i].status_code + ' "><strong>Order Status:</strong> ' + orders[i].ord_status + '</span>' +
-                        '<span class="order-date clearfix"><strong>Order Date:</strong> ' + orders[i].date_add + '</span>' +
-                        '<span class="order-amount clearfix"><strong>Order Amount:</strong> ' + orders[i].total_paid + '   ' + orders[i].currency_code + '</span>' +
-                        '<span class="order-products clearfix "><strong>Products Ordered:</strong> ' + orders[i].count_prods + '</span>' +
+                        '<div class="col-sm-6 col-xs-6"> <span class="order-number clearfix"><strong>Order Id:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed"> ' + orders[i].id_order + '</span> </div>' +
+                        '<div class="col-sm-6 col-xs-6"> <span class="customername clearfix"><strong>Customer Name:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class="text-sm detailed">' + orders[i].customer + '</span></div>' +
+                        '<div class="col-sm-6 col-xs-6"> <span class="order-status clearfix ' + orders[i].status_code + ' "><strong>Order Status:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed">' + orders[i].ord_status + '</span></div>' +
+                        '<div class="col-sm-6 col-xs-6"> <span class="order-date clearfix"><strong>Order Date:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class=" text-sm detailed">' + orders[i].date_add + '</span></div>' +
+                        '<div class="col-sm-6 col-xs-6"> <span class="order-amount clearfix"><strong>Order Amount:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed">' + orders[i].total_paid + '   ' + orders[i].currency_code + '</span> </div>' +
+                        '<div class="col-sm-6 col-xs-6"> <span class="order-products clearfix "><strong>Products Ordered:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed">' + orders[i].count_prods + '</span></div>' +
+
                         '</div>' +
 
                         '<div class="col-sm-2 col-xs-2">' +
 
 
-                        '<span class="order-nav-icon   clearfix"> <i class="fa fa-angle-right"></i></span>' +
+                        '<span class="order-nav-icon text-right  clearfix"> <i class="fa fa-angle-right"></i></span>' +
                         '</div>' +
                         '  </a> </td> </tr>';
                 }
@@ -453,9 +454,9 @@ $(document).ready(function () {
                 var order_products = json.order_products;
                 var assigned_delivery = json.order_info.assigned_delivery;
 
-                var name = "<table class='table table-striped2 table-condensed'><tbody>";
+                var name = "<table class='table table-striped2  '><tbody>";
                 name += "<tr> <td>  <span class='name'> <strong> Customer Name :</strong> </span></td> <td> <span> " + order_info.customer + "</span></td></tr>";
-                name += "<tr> <td><span class='name" + order_info.status_code + "'> <strong> Order Status :</strong> </span></td> <td> <span> " + order_info.status + "</span></td></tr>";
+                name += "<tr> <td><span class='name " + order_info.status_code + "'> <strong> Order Status :</strong> </span></td> <td> <span> " + order_info.status + "</span></td></tr>";
                 name += "<tr> <td><span class='name'> <strong> Order Number :</strong>  </span></td> <td> <span> #" + order_info.id_order + "</span> </td></tr>";
                 name += "<tr> <td><span class='name'> <strong> Delivery Method :</strong> </span></td> <td> <span> " + order_info.s_method + "</span> </td></tr>";
                 name += "<tr> <td><span class='name'> <strong> Payment  Method :</strong> </span></td> <td> <span> " + order_info.p_method + "</span> </td></tr>";
@@ -491,7 +492,7 @@ $(document).ready(function () {
 
                 $('#orders-inner #customer-details').html(name);
 
-                var orders = "<table class='table table-orders table-condensed'> <tbody><tr> <th colspan='2'>  General   </th> </tr>";
+                var orders = "<table class='table table-orders  '> <tbody><tr> <th colspan='2'>  General   </th> </tr>";
                 orders += "<tr> <td> <span class='name'> Name   :  </span>  </td> <td> <span> " + order_info.customer + "</span>  </td></tr>";
                 orders += "<tr> <td> <span class='name'> Email  :  </span> </td> <td><span> " + order_info.email + "</span>  </td></tr>";
                 orders += "<tr> <td> <span class='name'> Status :  </span> </td> <td><span> " + order_info.status + "</span>  </td></tr>";
@@ -500,7 +501,7 @@ $(document).ready(function () {
                 orders += "</tbody></table>";
                 $('#orders-inner #info').html(orders);
 
-                var shipping = "<table class='table table-orders table-condensed'> <tbody><tr> <th colspan='2'>  Discounts, Shipping, Coupons   </th> </tr>";
+                var shipping = "<table class='table table-orders  '> <tbody><tr> <th colspan='2'>  Discounts, Shipping, Coupons   </th> </tr>";
                 //row_start + "<div class='col-sm-12 col-xs-12'>    </div>" + row_end;
                 shipping += "<tr> <td> <span class='name'> <strong>Shipping: </strong></span> </td> <td><span> " + order_info.total_shipping + "</span> </td></tr>";
                 shipping += "<tr> <td>  <span class='name'> <strong>Discount:</strong>  </span> </td> <td><span> " + order_info.discount + "</span> </td></tr>";
@@ -511,7 +512,7 @@ $(document).ready(function () {
                 shipping += "</tbody></table>";
                 $('#orders-inner #order').html(shipping);
 
-                var shippingaddress = "<table class='table table-orders table-condensed'> <tbody><tr> <th colspan='2'> Delivery Address   </th> </tr>";
+                var shippingaddress = "<table class='table table-orders  '> <tbody><tr> <th colspan='2'> Delivery Address   </th> </tr>";
                 shippingaddress += "<tr> <td>  <span class='name'> <strong>Delivery Method:</strong> </span> </td> <td><span> " + order_info.s_method + "    </span>   </td></tr>";
                 shippingaddress += "<tr> <td> <span class='name'> <strong>Name:</strong>  </span> </td> <td><span> " + order_info.s_name + "      </span>   </td></tr>";
                 shippingaddress += "<tr> <td> <span class='name'> <strong>Address:</strong>  </span></td> <td><span> " + order_info.s_address_1 + " </span>  <br/> <span> " + order_info.s_address_2 + "</span>  </td></tr>";
@@ -520,7 +521,7 @@ $(document).ready(function () {
                 shippingaddress += "</tbody></table>";
                 $('#orders-inner #shipping').html(shippingaddress);
 
-                var billingaddress = "<table class='table table-orders table-condensed'> <tbody><tr> <th colspan='2'>  Billing  Address  </th> </tr>";
+                var billingaddress = "<table class='table table-orders  '> <tbody><tr> <th colspan='2'>  Billing  Address  </th> </tr>";
                 billingaddress += "<tr> <td><span class='name'><strong>Payment Method:</strong> </span> </td> <td><span> " + order_info.p_method + "</span>  </td></tr>";
                 billingaddress += "<tr> <td><span class='name'><strong>Name: </strong> </span> </td> <td><span> " + order_info.b_name + "</span> </td></tr>";
                 billingaddress += "<tr> <td><span class='name'><strong>Email:</strong>  </span> </td> <td><span> " + order_info.b_email + "</span>  </td></tr>";
@@ -531,7 +532,7 @@ $(document).ready(function () {
                 billingaddress += "</tbody></table>";
                 $('#orders-inner #billing').html(billingaddress);
 
-                var order_history = "<table class='table table-orders table-condensed'> <tbody><tr> <th colspan='2'>  ORDER HISTORY  </th> </tr>";
+                var order_history = "<table class='table table-orders  '> <tbody><tr> <th colspan='2'>  ORDER HISTORY  </th> </tr>";
                 for (var i in order_comments) {
                     order_history += "<tr> <td>";
                     order_history += row_start + "<div class='col-sm-3 col-xs-3'> <span class='name'> <strong>Date:</strong> </span> </div> <div class='col-sm-9 col-xs-9'><p> " + order_comments[i].date_added + "</p> </div>" + row_end;
@@ -542,39 +543,167 @@ $(document).ready(function () {
                 $('#orders-inner #history').html(order_history);
 
 
-                var products = "<table class='table table-orders table-condensed'> <tbody><tr> <th >  ORDERED PRODUCTS  </th> </tr>";
-                /*for (var i in order_products) {
-                    products += '<tr>  <td> ' +
-                        "<div class='col-sm-3 col-xs-3'>" +
-                        '<a class="id" data-transition="flip" data-id="' + order_products[i].product_id + '" href="products-inner.html?id=' + order_products[i].product_id + '" > ' +
-                        "<img class='img-responsive' src='" + order_products[i].thumbnail + "'  /> " + "  </a>" +
-                        "</div>" +
-                        "<div class='col-sm-9 col-xs-9'> " +
-                        '<a class="id" data-transition="flip" data-id="' + order_products[i].product_id + '" href="products-inner.html?id=' + order_products[i].product_id + '" > ' +
-                        "<span class='title'> <strong>Name:</strong> " + order_products[i].product_name + "  </span> <div class='clearfix'> </div> " +
-                        "<span class='title'> <strong>Type:</strong>" + order_products[i].product_type + "  </span> <div class='clearfix'> </div>" +
-                        "<span class='title'> <strong>Quantity:</strong> " + order_products[i].product_quantity + "  </span> <div class='clearfix'> </div>  " +
-                        "<span class='title'> <strong>Price:</strong>" + order_products[i].product_price + " </span> <div class='clearfix'> </div>" +
-                        '   </a> ' +
-                        '</div> </td> </tr>';
-                }*/
+                var products = "<table class='table table-orders  '> <tbody><tr> <th >  ORDERED PRODUCTS  </th> </tr>";
+
                 for (var i in order_products) {
                     products += '<tr> ' +
                         ' <td> ' +
-                        "<div class='col-sm-3 col-xs-3'>" + '<a class="id" data-transition="flip" data-id="' + order_products[i].product_id + '" href="products-inner.html?id=' + order_products[i].product_id + '" > ' +                       "<img class='img-responsive' src='" + order_products[i].thumbnail + "'  /> " + "  </a>" +"</div>" +
-                        "<div class='col-sm-9 col-xs-9'> " +
+                        "<div class='col-sm-2 col-xs-2'>" + '<a class="id" data-transition="flip" data-id="' + order_products[i].product_id + '" href="products-inner.html?id=' + order_products[i].product_id + '" > ' +   
+						  "<img class='img-responsive' src='" + order_products[i].thumbnail + "'  /> " + "  </a>" +"</div>" +
+                        "<div class='col-sm-10 col-xs-10'> " +
                         '<a class="id" data-transition="flip" data-id="' + order_products[i].product_id + '" href="products-inner.html?id=' + order_products[i].product_id + '" > ' +
-                        "<table class='table table-condensed products-table' > <tbody>"+
-                        "<tr> <td><span class='title'> Name : </span> </td> <td> <span class='title'> " + order_products[i].product_name + " </span>  </td> </tr> " +
-                        "<tr> <td><span class='title'> Type : </span> </td> <td> <span class='title'>" + order_products[i].product_type + "  </span>  </td> </tr>" +
-                        "<tr> <td><span class='title'> Qty:</span> </td> <td> <span class='title'> " + order_products[i].product_quantity + "  </span>  </td> </tr>  " +
-                        "<tr> <td><span class='title'> Price :</span> </td> <td> <span class='title'> " + order_products[i].product_price + " </span>  </td> </tr>" +
+                        "<table class='table   products-table' > <tbody>"+
+                        "<tr> <td><span class='title'> Name : </span> </td> <td> <span class='title2'> " + order_products[i].product_name + " </span>  </td> </tr> " +
+                        "<tr> <td><span class='title'> Type : </span> </td> <td> <span class='title2'>" + order_products[i].product_type + "  </span>  </td> </tr>" +
+                        "<tr> <td><span class='title'> Qty:</span> </td> <td> <span class='title2'> " + order_products[i].product_quantity + "  </span>  </td> </tr>  " +
+                        "<tr> <td><span class='title'> Price :</span> </td> <td> <span class='title2'> " + order_products[i].product_price + " </span>  </td> </tr>" +
                         '</tbody> </table>   </a> ' +
                         '</div> </td> </tr>';
                 }
                 products += "</tbody></table>";
                 $('#orders-inner #products').html(products);
 
+
+            }
+        });
+
+    });
+
+
+
+// show all the orders
+    $(document).on("pagebeforeshow", "#orders-inner-delivery", function () {
+
+        $.ajax({
+            url: remote_url + '&call_function=get_orders_info&order_id=' + $.urlParam('id'),
+            dataType: 'json',
+            beforeSend: function () {
+                $( "#orders-inner-delivery").append(loading_overlay);
+                $( "#orders-inner-delivery").find('.tabs').addClass("hidden");
+            },
+            complete: function () {
+                $( "#orders-inner-delivery").find('.tabs').removeClass("hidden");
+                $( "#orders-inner-delivery").find('.overlay ').remove();
+
+            },
+            success: function (json) {
+                var order_info = json.order_info;
+                var order_products_count = json.o_products_count;
+                var order_comments = json.order_info.admin_comments;
+                var order_products = json.order_products;
+                var assigned_delivery = json.order_info.assigned_delivery;
+
+                var name = "<table class='table table-striped2  '><tbody>";
+                name += "<tr> <td>  <span class='name'> <strong> Customer Name :</strong> </span></td> <td> <span> " + order_info.customer + "</span></td></tr>";
+                name += "<tr> <td><span class='name " + order_info.status_code + "'> <strong> Order Status :</strong> </span></td> <td> <span> " + order_info.status + "</span></td></tr>";
+                name += "<tr> <td><span class='name'> <strong> Order Number :</strong>  </span></td> <td> <span> #" + order_info.id_order + "</span> </td></tr>";
+                name += "<tr> <td><span class='name'> <strong> Delivery Method :</strong> </span></td> <td> <span> " + order_info.s_method + "</span> </td></tr>";
+                name += "<tr> <td><span class='name'> <strong> Payment  Method :</strong> </span></td> <td> <span> " + order_info.p_method + "</span> </td></tr>";
+                name += "<tr> <td><span class='name'> <strong> Products  :</strong> </span></td> <td> <span> " + order_products_count + "</span> </td></tr>";
+                name += "<tr> <td><span class='name'> <strong> Amount  :</strong> </span></td> <td> <span> " + order_info.total + ' ' + order_info.currency_code + "</span> </td></tr>";
+                if (assigned_delivery != '') {
+                    name += "<tr> <td><span class='name " + order_info.status_code + "'>  <strong>Assigned to : </strong> </span></td> <td><span class='label label-success'>  <span> " + assigned_delivery.data.display_name + "</span> </span> </td></tr>";
+                }
+                else {
+                    if (order_info.status_code == 'wc-delv-await') {
+                        name += "<tr> <td><a id='assignorderbtn'  class='  btn btn-sm bg-red' data-transition='slide'    href='orders-inner-assign.html?id=" + order_info.id_order + "'  > Assign Order  </a>  </td> </tr>"
+                    }
+                    //('publish','wc-pending','wc-processing','wc-on-hold','wc-completed','wc-cancelled','wc-refunded','wc-failed')
+                    else if
+                    ((order_info.status_code == 'wc-colc-await')
+                        || (order_info.status_code == 'wc-on-hold')
+                        || (order_info.status_code == 'wc-processing')
+                        || (order_info.status_code == 'wc-pending')
+                    ) {
+                        name += "<tr><tr> <th class='heading-form' colspan='2'> UPDATE ORDER STATUS </th> </tr> <td colspan='2'> " +
+                            "<div class='form-group'><label> New Status: </label> <select class='form-control' id='order_status'> <option value=''> --select-- </option> ";
+                        var order_statuses = json.statuses;
+                        for (var i in order_statuses) { name += '<option value="' + order_statuses[i].st_id + '"> ' + order_statuses[i].st_name + '</option>';   }
+                        name += "</select> </div>" +
+                            "<div class='form-group'><label> Comment: </label><textarea data-role='none' class='form-control' id='reason'></textarea></div>" +
+
+                            "<div class='form-group'> <input type='checkbox' id='notify_customer' checked='true' value='1' data-role='none' class='checkbox-inline'> <span> Notify the Customer of the Update </span> </div>  " +
+                            "<div class='form-group'><a id='order-status-btn'  class='  btn btn-sm bg-red' data-transition='slide'> Update  </a> </div> </td> </tr>"
+
+                    }
+                }
+                name += "</tbody></table>";
+
+                $(this).find('#customer-details').html(name);
+
+                var orders = "<table class='table table-orders  '> <tbody><tr> <th colspan='2'>  General   </th> </tr>";
+                orders += "<tr> <td> <span class='name'> Name   :  </span>  </td> <td> <span> " + order_info.customer + "</span>  </td></tr>";
+                orders += "<tr> <td> <span class='name'> Email  :  </span> </td> <td><span> " + order_info.email + "</span>  </td></tr>";
+                orders += "<tr> <td> <span class='name'> Status :  </span> </td> <td><span> " + order_info.status + "</span>  </td></tr>";
+                orders += "<tr> <td> <span class='name'> Created:  </span> </td> <td><span> " + order_info.date_added + "</span>  </td></tr>";
+                orders += "<tr> <td> <span class='name'> <strong> TOTAL: </strong>  </span> </td> <td> <span> " + order_info.total + ' ' + order_info.currency_code + "</span>  </td></tr>";
+                orders += "</tbody></table>";
+                $( "#orders-inner-delivery").find('#info').html(orders);
+
+                var shipping = "<table class='table table-orders  '> <tbody><tr> <th colspan='2'>  Discounts, Shipping, Coupons   </th> </tr>";
+                //row_start + "<div class='col-sm-12 col-xs-12'>    </div>" + row_end;
+                shipping += "<tr> <td> <span class='name'> <strong>Shipping: </strong></span> </td> <td><span> " + order_info.total_shipping + "</span> </td></tr>";
+                shipping += "<tr> <td>  <span class='name'> <strong>Discount:</strong>  </span> </td> <td><span> " + order_info.discount + "</span> </td></tr>";
+                shipping += "<tr> <td>  <span class='name'><strong> Tax:</strong>  </span> </td> <td><span> " + order_info.tax_amount + "</span></td></tr>";
+                shipping += "<tr> <td> <span class='name'> <strong>Tax Refunded:</strong>  </span> </td> <td><span> " + order_info.t_refunded + "</span> </td></tr>";
+                shipping += "<tr> <td>  <span class='name'> <strong>Total:</strong>  </span> </td> <td><span> " + order_info.currency_code + ' ' + order_info.order_total + "</span></td></tr>";
+
+                shipping += "</tbody></table>";
+                $( "#orders-inner-delivery").find('#order').html(shipping);
+
+                var shippingaddress = "<table class='table table-orders  '> <tbody><tr> <th colspan='2'> Delivery Address   </th> </tr>";
+                shippingaddress += "<tr> <td>  <span class='name'> <strong>Delivery Method:</strong> </span> </td> <td><span> " + order_info.s_method + "    </span>   </td></tr>";
+                shippingaddress += "<tr> <td> <span class='name'> <strong>Name:</strong>  </span> </td> <td><span> " + order_info.s_name + "      </span>   </td></tr>";
+                shippingaddress += "<tr> <td> <span class='name'> <strong>Address:</strong>  </span></td> <td><span> " + order_info.s_address_1 + " </span>  <br/> <span> " + order_info.s_address_2 + "</span>  </td></tr>";
+                shippingaddress += "<tr> <td> <span class='name'>  <strong>Post Code:</strong>   </span> </td> <td><span> " + order_info.s_postcode + "</span>  </td></tr>";
+                shippingaddress += "<tr> <td> <span class='name'>  <strong>Country:</strong>   </span> </td> <td><span> " + order_info.s_country + "</span>   </td></tr>";
+                shippingaddress += "</tbody></table>";
+                $( "#orders-inner-delivery").find('#shipping').html(shippingaddress);
+
+                var billingaddress = "<table class='table table-orders  '> <tbody><tr> <th colspan='2'>  Billing  Address  </th> </tr>";
+                billingaddress += "<tr> <td><span class='name'><strong>Payment Method:</strong> </span> </td> <td><span> " + order_info.p_method + "</span>  </td></tr>";
+                billingaddress += "<tr> <td><span class='name'><strong>Name: </strong> </span> </td> <td><span> " + order_info.b_name + "</span> </td></tr>";
+                billingaddress += "<tr> <td><span class='name'><strong>Email:</strong>  </span> </td> <td><span> " + order_info.b_email + "</span>  </td></tr>";
+                billingaddress += "<tr> <td><span class='name'><strong>Phone:</strong>  </span> </td> <td><span> " + order_info.b_telephone + "</span>  </td></tr>";
+                billingaddress += "<tr> <td><span class='name'><strong>Address:</strong>  </span> </td> <td><span> " + order_info.b_address_1 + "</span> <br/> <span> " + order_info.b_address_2 + "</span>  </td></tr>";
+                billingaddress += "<tr> <td><span class='name'><strong>City:</strong>  </span> </td> <td><span> " + order_info.b_city + "</span>  </td></tr>";
+                billingaddress += "<tr> <td><span class='name'><strong>Country:</strong>  </span> </td> <td><span> " + order_info.b_country + "</span>  </td></tr>";
+                billingaddress += "</tbody></table>";
+                $( "#orders-inner-delivery").find('#billing').html(billingaddress);
+
+                var order_history = "<table class='table table-orders  '> <tbody><tr> <th colspan='2'>  ORDER HISTORY  </th> </tr>";
+                for (var i in order_comments) {
+                    order_history += "<tr> <td>";
+                    order_history += row_start + "<div class='col-sm-3 col-xs-3'> <span class='name'> <strong>Date:</strong> </span> </div> <div class='col-sm-9 col-xs-9'><p> " + order_comments[i].date_added + "</p> </div>" + row_end;
+                    order_history += row_start + "<div class='col-sm-3 col-xs-3'> <span class='name'> " + order_comments[i].note_type + "   :  </span> </div> <div class='col-sm-9 col-xs-9'><p> " + order_comments[i].note + "</p> </div>" + row_end;
+                    order_history += "</td> </tr>";
+                }
+                order_history += "</tbody></table>";
+                $( "#orders-inner-delivery").find('#history').html(order_history);
+
+
+                var products = "<table class='table table-orders  '> <tbody><tr> <th >  ORDERED PRODUCTS  </th> </tr>";
+
+                for (var i in order_products) {
+                    products += '<tr> ' +
+                        ' <td> ' +
+                        "<div class='col-sm-2 col-xs-2'>" + '<a class="id" data-transition="flip" data-id="' + order_products[i].product_id + '" href="products-inner.html?id=' + order_products[i].product_id + '" > ' +
+                        "<img class='img-responsive' src='" + order_products[i].thumbnail + "'  /> " + "  </a>" +"</div>" +
+                        "<div class='col-sm-10 col-xs-10'> " +
+                        '<a class="id" data-transition="flip" data-id="' + order_products[i].product_id + '" href="products-inner.html?id=' + order_products[i].product_id + '" > ' +
+                        "<table class='table   products-table' > <tbody>"+
+                        "<tr> <td><span class='title'> Name : </span> </td> <td> <span class='title2'> " + order_products[i].product_name + " </span>  </td> </tr> " +
+                        "<tr> <td><span class='title'> Type : </span> </td> <td> <span class='title2'>" + order_products[i].product_type + "  </span>  </td> </tr>" +
+                        "<tr> <td><span class='title'> Qty:</span> </td> <td> <span class='title2'> " + order_products[i].product_quantity + "  </span>  </td> </tr>  " +
+                        "<tr> <td><span class='title'> Price :</span> </td> <td> <span class='title2'> " + order_products[i].product_price + " </span>  </td> </tr>" +
+                        '</tbody> </table>   </a> ' +
+                        '</div> </td> </tr>';
+                }
+                products += "</tbody></table>";
+                $( "#orders-inner-delivery").find('#products').html(products);
+
+                if(order_info.status=="complete")
+                    $( "#orders-inner-delivery").find("#order-status-delivery").hide();
 
             }
         });
@@ -625,7 +754,8 @@ $(document).ready(function () {
             complete: function () {
                 $('#orders-inner-assign   .overlay').remove();
             },
-            success: function (json) {
+            success: function (json)
+            {
                 $.mobile.changePage("orders-inner.html?id=" + order_id,
                     {
                         transition: "slide",
@@ -649,19 +779,45 @@ $(document).ready(function () {
                 $('#delivery-orders .list-content .overlay').remove();
             },
             success: function (json) {
-
-                loop = "<table class='table table-condensed'><tbody>";
+                loop = "<table class='table  '><tbody>";
                 var orders = json.orders;
                 for (var i in orders) {
 
                     loop += '<tr>  <td> <a class="id" data-transition="flip" data-id="' + orders[i].id_order + '" href="orders-inner.html?id=' + orders[i].id_order + '" > ' +
                         '<div class="col-sm-10 col-xs-10">' +
-                        '<span class="order-number clearfix"> Order Id: ' + orders[i].id_order + '</span>' +
-                        '<span class="customername clearfix"> Customer Name: ' + orders[i].customer + '</span>' +
-                        '<span class="order-status clearfix ' + orders[i].status_code + ' "> Order Status: ' + orders[i].ord_status + '</span>' +
-                        '<span class="order-date clearfix"> Order Date: ' + orders[i].date_add + '</span>' +
-                        '<span class="order-amount clearfix"> Order Amount: ' + orders[i].total_paid + '   ' + orders[i].currency_code + '</span>' +
-                        '<span class="order-products clearfix "> Products Ordered: ' + orders[i].count_prods + '</span>' +
+                        '<div class="col-sm-6 col-xs-6"> <span class="order-number clearfix"><strong>Order Id:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed"> ' + orders[i].id_order + '</span> </div>' +
+                        '<div class="col-sm-6 col-xs-6"> <span class="customername clearfix"><strong>Customer Name:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class="text-sm detailed">' + orders[i].customer + '</span></div>' +
+                        '<div class="col-sm-6 col-xs-6"> <span class="order-status clearfix ' + orders[i].status_code + ' "><strong>Order Status:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed">' + orders[i].ord_status + '</span></div>' +
+                        '<div class="col-sm-6 col-xs-6"> <span class="order-date clearfix"><strong>Order Date:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class=" text-sm detailed">' + orders[i].date_add + '</span></div>' +
+                        '<div class="col-sm-6 col-xs-6"> <span class="order-amount clearfix"><strong>Order Amount:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed">' + orders[i].total_paid + '   ' + orders[i].currency_code + '</span> </div>' +
+                        '<div class="col-sm-6 col-xs-6"> <span class="order-products clearfix "><strong>Products Ordered:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed">' + orders[i].count_prods + '</span></div>' +
+
+                        '</div>' +
+
+                        '<div class="col-sm-2 col-xs-2">' +
+
+
+                        '<span class="order-nav-icon text-right  clearfix"> <i class="fa fa-angle-right"></i></span>' +
+                        '</div>' +
+                        '  </a> </td> </tr>';
+                }
+                loop += '</tbody></table>';
+                $('#delivery-orders .list-content').html(loop);
+            }
+            /*success: function (json) {
+
+                loop = "<table class='table  '><tbody>";
+                var orders = json.orders;
+                for (var i in orders) {
+
+                    loop += '<tr>  <td> <a class="id" data-transition="flip" data-id="' + orders[i].id_order + '" href="orders-inner.html?id=' + orders[i].id_order + '" > ' +
+                        '<div class="col-sm-10 col-xs-10">' +
+                        '<div class="col-sm-6 col-xs-6"> <span class="order-number clearfix"> Order Id: </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed"> ' + orders[i].id_order + '</span> </div>' +
+                        '<div class="col-sm-6 col-xs-6"> <span class="customername clearfix"> Customer Name: </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed">' + orders[i].customer + '</span> </div>' +
+                        '<div class="col-sm-6 col-xs-6"> <span class="order-status clearfix ' + orders[i].status_code + ' "> Order Status:</span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed"> ' + orders[i].ord_status + '</span> </div>' +
+                        '<div class="col-sm-6 col-xs-6"> <span class="order-date clearfix"> Order Date: </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed">' + orders[i].date_add + '</span> </div>' +
+                        '<div class="col-sm-6 col-xs-6"> <span class="order-amount clearfix"> Order Amount: </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed"> ' + orders[i].total_paid + '   ' + orders[i].currency_code + '</span> </div>' +
+                        '<div class="col-sm-6 col-xs-6"> <span class="order-products clearfix "> Products Ordered: </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed"> ' + orders[i].count_prods + '</span> </div>' +
                         '</div>' +
 
                         '<div class="col-sm-2 col-xs-2">' +
@@ -670,13 +826,41 @@ $(document).ready(function () {
                         '<span class="order-nav-icon   clearfix"><i class="fa fa-angle-right"></i> </span>' +
                         '</div>' +
                         '  </a> </td> </tr>';
+
+
                 }
                 loop += '</tbody></table>';
                 $('#delivery-orders .list-content').html(loop);
-            }
+            }*/
         });
     });
 
+
+
+
+    $(document).on("click", "#order-deliver-btn", function () {
+
+        var message = $('#orders-inner-delivery #reason').val();
+        var order_id = $.urlParam('id');
+        $.ajax({
+            url: remote_url + '&call_function=set_complete&message=' + message + '&order_id=' + order_id + '&action=change_status&delivery_person=' + $("#s_user_id").val(),
+            dataType: 'json',
+            beforeSend: function () {
+                $('#orders-inner-delivery  ').append(loading_overlay);
+            },
+            complete: function () {
+                $('#orders-inner-delivery   .overlay').remove();
+            },
+            success: function (json) {
+                $.mobile.changePage("orders.html",
+                    {
+                        transition: "slide",
+                        changeHash: true
+                    });
+            }
+
+        });
+    });
 
     $(document).on("click", "#order-status-btn", function () {
         var message = $('#orders-inner').find('#reason').val();
@@ -720,25 +904,24 @@ $(document).ready(function () {
                 $('#products .list-content .overlay').remove();
             },
             success: function (json) {
-                loop = "<table class='table table-condensed'><tbody>";
+                loop = "<table class='table  '><tbody>";
                 var products = json.products;
-                for (var i in products) {
-
-
+                for (var i in products) 
+				{
                     loop += '<tr>  <td> ' +
-                        "<div class='col-sm-3 col-xs-3'>" +
+                        "<div class='col-sm-2 col-xs-2'>" +
                         '<a class="id" data-transition="flip" data-id="' + products[i].product_id + '" href="products-inner.html?id=' + products[i].product_id + '" > ' +
                         "<img class='img-responsive' src='" + products[i].thumbnail + "'  /> " + "  </a>" +
                         "</div>" +
-
-                        "<div class='col-sm-9 col-xs-9'> " +
-                        '<a class="id" data-transition="flip" data-id="' + products[i].product_id + '" href="products-inner.html?id=' + products[i].product_id + '" > ' +
-                        "<span class='title'><strong> Name: </strong>" + products[i].name + "  </span> <div class='clearfix'> </div> " +
-                        "<span class='title'><strong> Type:</strong> " + products[i].product_type + " </span> <div class='clearfix'> </div>" +
-                        "<span class='title'><strong> Quantity: </strong>" + products[i].quantity + "  </span> <div class='clearfix'> </div>  " +
-                        "<span class='title'><strong> Price: </strong>" + products[i].price + " </span> <div class='clearfix'> </div>" +
-                        '   </a> ' +
-                        '</div> </td> </tr>';
+                       "<div class='col-sm-10 col-xs-10'> " + 
+							"<a class='id' data-transition='flip' data-id='" + products[i].product_id + "' href='products-inner.html?id=" + products[i].product_id + "' > " +
+						 		"<div class='col-sm-4 col-xs-4'><span class='title'><strong> Name: </strong></span> </div> <div class='col-sm-8 col-xs-8'> <span class='detailed'>" + products[i].name + "  </span> </div> " +
+								"<div class='col-sm-4 col-xs-4'><span class='title'><strong> Type:</strong> </span> </div> <div class='col-sm-8 col-xs-8'> <span class='detailed'>" + products[i].product_type + " </span>  </div> " +
+								"<div class='col-sm-4 col-xs-4'><span class='title'><strong> Quantity: </strong></span> </div> <div class='col-sm-8 col-xs-8'> <span class='detailed'>" + products[i].quantity + "  </span>  </div> " +
+								"<div class='col-sm-4 col-xs-4'><span class='title'><strong> Price: </strong> </span> </div> <div class='col-sm-8 col-xs-8'> <span class='detailed'>" + products[i].price + " </span>  </div> " +	 
+							'</a> ' +
+                        '</div>' 
+                        ' </td></tr>';
                 }
                 loop += '</tbody></table>';
                 $('#products .list-content').html(loop);

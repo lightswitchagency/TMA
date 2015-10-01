@@ -1,4 +1,4 @@
-<div data-role="page" id="orders-inner" data-theme="a">
+<div data-role="page" id="orders-inner-delivery" data-theme="a">
     <div data-role="header" data-position="inline">
         <a href="#mainmenu" data-role="none"
            class="jqm-navmenu-link ui-btn ui-btn-icon-notext  ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left">Menu</a>
@@ -48,19 +48,18 @@
                             <div class="row">
                                 <div class="col-sm-12 col-xs-12">
                                     <span class="name"> <strong> UPDATE ORDER DETAILS:</strong> </span>
-
                                     <div class="form-group">
                                         <label> Comment </label>
                                         <textarea data-role="none" class="form-control" id="reason"></textarea>
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group hidden">
                                         <input type="checkbox" id="notify_customer" checked="true" value="1"
                                                data-role="none"
                                                class="checkbox-inline"> <span> Notify the Customer of Assignment </span>
                                     </div>
 
                                     <div class="form-group">
-                                        <button id="order-deliver-btn" class="btn bg-danger btn-sm btn-flat"> Update
+                                        <button id="order-deliver-btn" class="btn bg-danger" > Update
                                             Order
                                         </button>
                                     </div>

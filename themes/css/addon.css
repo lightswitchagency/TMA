@@ -2542,12 +2542,14 @@ textarea.input-lg {
     border-radius: 6px;
 }
 
-.btn-sm, .btn-xs {
+.btn-sm, .btn-xs, #order-deliver-btn {
     padding: 5px 10px;
     font-size: 12px;
     line-height: 1.5;
     border-radius: 3px;
 }
+
+
 
 .btn-xs {
     padding: 1px 5px;
@@ -12463,10 +12465,6 @@ a:hover .caret-white {
 
 .text-md {
     font-size: 0.85em;
-}
-
-.text-sm {
-    font-size: 12px;
 }
 
 .text-xs {

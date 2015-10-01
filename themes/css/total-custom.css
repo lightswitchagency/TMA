@@ -3425,9 +3425,6 @@ table.text-center, table.text-center td, table.text-center th {
     font-weight: 700
 }
 
-.text-sm {
-    font-size: 12px
-}
 
 .jqstooltip {
     padding: 5px !important;
@@ -3797,7 +3794,11 @@ table.text-center, table.text-center td, table.text-center th {
 overflow: inherit; word-break: normal; word-wrap: normal; padding: 0; white-space: normal; margin-top: -10px !important;}
 
 
-#order-status-btn, #assignorderbtn, #order-assign-btn{background: #E10031 !important; font-size: 16px;}
+#order-status-btn, #assignorderbtn, #order-assign-btn, #order-deliver-btn{background: #E10031 !important; font-size: 16px;}
+#order-deliver-btn{color: #fff;
+    width: auto;
+    font-size: 16px !important;}
+#order-deliver-btn:hover{text-shadow: none}
 #order-assign-btn:hover{color: #fff !important;}
 
 .checkbox-inline{margin: -3px 5px 0px 0px !important;}
@@ -3835,6 +3836,7 @@ overflow: inherit; word-break: normal; word-wrap: normal; padding: 0; white-spac
 .main-menu span {
     clear: left;
     width: 100%;
+    padding-top: 6px;
     text-align: center;
     float: left;
     text-transform: uppercase;
@@ -3918,10 +3920,17 @@ border-bottom: 12px solid #DEDADA;}
     background:#fff;
 }
 #customers-inner .table-orders tr, #tabs  .table-orders tr, #customer-details tr, #products .table-orders tr,#orders tr{border-bottom: 1px solid #d6d6d6;}
+
+
+#products .table.table-orders .table.products-table{margin-top: 0}
+#products .table.table-orders .table.products-table tr{border-bottom: 0px solid #d6d6d6;}
+#products .table.table-orders .table.products-table .title{font-weight: bold;}
+#products .table.table-orders .table.products-table td{min-width: 70px;}
+
 #products-inner h3.innerproducttitle{font-size: 18px;margin-bottom: 10px;font-weight: bold;}
 .order-nav-icon .fa{font-size: 42px;}
 
-table, .order-status strong{color: #717171;}
+table, .order-status strong{color: #717171 !important;}
 
 #reason{min-height: 100px;}
 
