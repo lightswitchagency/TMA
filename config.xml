@@ -17,7 +17,7 @@
     </feature>
 
 	<preference name="orientation"      value="default" /> 
-	 <preference name="phonegap-version"      value="3.7.0" /> 
+	
 	 
 	 
       <preference name="target-device"    value="universal" /> 
