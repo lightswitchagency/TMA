@@ -44,7 +44,7 @@ function StartApp() {
 
 }
 
-
+$.ajaxSetup({ cache: false });
 $(document).bind("mobileinit", function(){
     $.mobile.page.prototype.options.domCache = false;
 });
@@ -57,7 +57,7 @@ $(document).ready(function () {
     StartApp();
 
     $('.ui-page').live('pagehide',function(){ $(this).remove(); });
-
+    $.ajaxSetup({ cache: false });
     $('.nav-tabs a').tabs();
 
     $(document).on("click", "  a ", function () {
@@ -101,6 +101,7 @@ $(document).ready(function () {
             $.ajax({
                 url: remote_url + '&call_function=log_user_inn&username=' + username + '&password=' + password,
                 dataType: 'json',
+
                 beforeSend: function () {
                     $('.login-register').append(loading_overlay);
                 },
