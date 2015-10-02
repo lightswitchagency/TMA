@@ -46,7 +46,10 @@ function StartApp() {
 
 $(document).ready(function () {
     StartApp();
-
+    
+    $(document).bind("mobileinit", function () {
+        $.mobile.ajaxLinksEnabled = false;
+    });
 
     $('.nav-tabs a').tabs();
 
