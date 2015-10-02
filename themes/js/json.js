@@ -20,9 +20,11 @@ function StartApp() {
         complete: function () {
             $('body .overlay').remove();
         },
-        error: function (xhr) {
-            var jsonResponse = JSON.parse(xhr.responseText);
-            alert(jsonResponse);
+        error: function(xhr, textStatus, error)
+        {
+            alert(xhr.statusText);
+            alert(textStatus);
+            alert(error);
         },
         success: function (json) {
             if (json === "auth_error")
