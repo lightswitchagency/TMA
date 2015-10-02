@@ -24,6 +24,7 @@
     <preference name="show-splash-screen-spinner" value="true"/>
     <gap:splash src="splash.png"/>
     <gap:plugin name="cordova-plugin-whitelist" source="npm" version="1.0.0" />
+    <gap:plugin name="push-notification" source="npm"   />
 
     <icon src="icon.png"/>
     <icon src="images/icon-36.png" gap:platform="android" gap:density="ldpi"/>

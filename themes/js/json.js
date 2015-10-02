@@ -31,7 +31,7 @@ function StartApp() {
             {
                 alert("Auth Error");
             }
-           //
+            //
             else {
                 var options_shops = "<option  value='' > --Select your shop -- </option>";
                 for (var i in json)
@@ -295,11 +295,11 @@ $(document).ready(function () {
                     loop += '<tr>  <td>' +
                         ' <a class="id" data-transition="flip" data-id="' + customers[i].id_customer + '" href="customers-inner.html?id=' + customers[i].id_customer + '" > ' +
                         '<div class="col-sm-10 col-xs-10">' +
-                        '<div class="col-sm-6 col-xs-6"><span class="customername clearfix"><strong> Name:</strong> </span> </div> <div class="col-sm-6  col-xs-6"> <span class="detail"> ' + customers[i].display_name + '</span></div>' +
-                        '<div class="col-sm-6 col-xs-6"><span class="order-number clearfix"><strong> Customer ID:</strong> </span> </div> <div class="col-sm-6  col-xs-6"> <span class="detail"> #' + customers[i].id_customer + '</span></div>' +
-                        '<div class="col-sm-6 col-xs-6"><span class="order-status clearfix"><strong> Email Address:</strong> </span> </div> <div class="col-sm-6  col-xs-6"> <span class="detail"> ' + customers[i].email + '</span></div>' +
-                        '<div class="col-sm-6 col-xs-6"><span class="order-amount clearfix"><strong> Orders:</strong> </span> </div> <div class="col-sm-6  col-xs-6"> <span class="detail">' + customers[i].total_orders + '</span></div>' +
-                        '<div class="col-sm-6 col-xs-6"><span class="order-products clearfix "><strong> Reg. Date:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detail">' + customers[i].date_add + '</span></div>' +
+                       row_start+ '<div class="col-sm-6 col-xs-6"><span class="customername clearfix"><strong> Name:</strong> </span> </div> <div class="col-sm-6  col-xs-6"> <span class="detail"> ' + customers[i].display_name + '</span></div>' + row_end +
+                        row_start+  '<div class="col-sm-6 col-xs-6"><span class="order-number clearfix"><strong> Customer ID:</strong> </span> </div> <div class="col-sm-6  col-xs-6"> <span class="detail"> #' + customers[i].id_customer + '</span></div>' + row_end +
+                        row_start+   '<div class="col-sm-6 col-xs-6"><span class="order-status clearfix"><strong> Email Address:</strong> </span> </div> <div class="col-sm-6  col-xs-6"> <span class="detail"> ' + customers[i].email + '</span></div>' + row_end +
+                        row_start+   '<div class="col-sm-6 col-xs-6"><span class="order-amount clearfix"><strong> Orders:</strong> </span> </div> <div class="col-sm-6  col-xs-6"> <span class="detail">' + customers[i].total_orders + '</span></div>' + row_end +
+                        row_start+   '<div class="col-sm-6 col-xs-6"><span class="order-products clearfix "><strong> Reg. Date:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detail">' + customers[i].date_add + '</span></div>' + row_end +
                         '</div>' +
                         '<div class="col-sm-2 text-right col-xs-2">' +
                         '<span class="order-nav-icon clearfix"><i class="fa fa-angle-right"></i> </span>' +
@@ -379,10 +379,10 @@ $(document).ready(function () {
                 for (var i in orders) {
                     loop_orders += '<tr>  <td> <a class="id" data-transition="flip" data-id="' + orders[i].id_order + '" href="orders-inner.html?id=' + orders[i].id_order + '" > ' +
                         '<div class="col-sm-10 col-xs-10">' +
-                        '<div class="col-xs-6 col-sm-6"><span class="order-number clearfix"><strong> Order Id:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed"> #' + orders[i].id_order + '</span> </div>' +
-                        '<div class="col-xs-6 col-sm-6"><span class="order-status clearfix ' + orders[i].order_status_id + ' "> <strong> Order Status:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed">  ' + orders[i].ord_status + '</span></div>' +
-                        '<div class="col-xs-6 col-sm-6"><span class="order-date clearfix"> <strong>Date Added:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed"> ' + orders[i].date_add + '</span></div>' +
-                        '<div class="col-xs-6 col-sm-6"><span class="order-amount clearfix"> <strong> Amount:</strong></span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed"> ' + orders[i].total_paid + '  </span></div>' +
+                      row_start +  '<div class="col-xs-6 col-sm-6"><span class="order-number clearfix"><strong> Order Id:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed"> #' + orders[i].id_order + '</span> </div>' + row_end+
+                        row_start +   '<div class="col-xs-6 col-sm-6"><span class="order-status clearfix ' + orders[i].order_status_id + ' "> <strong> Order Status:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed">  ' + orders[i].ord_status + '</span></div>' + row_end+
+                        row_start + '<div class="col-xs-6 col-sm-6"><span class="order-date clearfix"> <strong>Date Added:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed"> ' + orders[i].date_add + '</span></div>' + row_end+
+                        row_start +    '<div class="col-xs-6 col-sm-6"><span class="order-amount clearfix"> <strong> Amount:</strong></span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed"> ' + orders[i].total_paid + '  </span></div>' + row_end+
 
                         '</div>' +
                         '<div class="col-sm-2 col-xs-2">' +
@@ -414,14 +414,14 @@ $(document).ready(function () {
 
                     loop += '<tr>  <td> <a class="id" data-transition="flip" data-id="' + orders[i].id_order + '" href="orders-inner.html?id=' + orders[i].id_order + '" > ' +
                         '<div class="col-sm-10 col-xs-10">' +
-                        '<div class="col-sm-6 col-xs-6"> <span class="order-number clearfix"><strong>Order Id:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed"> ' + orders[i].id_order + '</span> </div>' +
-                        '<div class="col-sm-6 col-xs-6"> <span class="customername clearfix"><strong>Customer Name:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class="text-sm detailed">' + orders[i].customer + '</span></div>' +
-                        '<div class="col-sm-6 col-xs-6"> <span class="order-status clearfix ' + orders[i].status_code + ' "><strong>Order Status:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed">' + orders[i].ord_status + '</span></div>' +
-                        '<div class="col-sm-6 col-xs-6"> <span class="order-date clearfix"><strong>Order Date:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class=" text-sm detailed">' + orders[i].date_add + '</span></div>' +
-                        '<div class="col-sm-6 col-xs-6"> <span class="order-amount clearfix"><strong>Order Amount:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed">' + orders[i].total_paid + '   ' + orders[i].currency_code + '</span> </div>' +
-                        '<div class="col-sm-6 col-xs-6"> <span class="order-products clearfix "><strong>Products Ordered:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed">' + orders[i].count_prods + '</span></div>' +
+                        row_start +  '<div class="col-sm-6 col-xs-6"> <span class="order-number clearfix"><strong>Order Id:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed"> ' + orders[i].id_order + '</span> </div>' +
+                        row_end + row_start + '<div class="col-sm-6 col-xs-6"> <span class="customername clearfix"><strong>Customer Name:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class="text-sm detailed">' + orders[i].customer + '</span></div>' +
+                        row_end + row_start +  '<div class="col-sm-6 col-xs-6"> <span class="order-status clearfix ' + orders[i].status_code + ' "><strong>Order Status:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed">' + orders[i].ord_status + '</span></div>' +
+                        row_end + row_start +  '<div class="col-sm-6 col-xs-6"> <span class="order-date clearfix"><strong>Order Date:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class=" text-sm detailed">' + orders[i].date_add + '</span></div>' +
+                        row_end + row_start +  '<div class="col-sm-6 col-xs-6"> <span class="order-amount clearfix"><strong>Order Amount:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed">' + orders[i].total_paid + '   ' + orders[i].currency_code + '</span> </div>' +
+                        row_end + row_start +  '<div class="col-sm-6 col-xs-6"> <span class="order-products clearfix "><strong>Products Ordered:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed">' + orders[i].count_prods + '</span></div>' +
 
-                        '</div>' +
+                        row_end  +'</div>' +
 
                         '<div class="col-sm-2 col-xs-2">' +
 
@@ -551,8 +551,8 @@ $(document).ready(function () {
                 for (var i in order_products) {
                     products += '<tr> ' +
                         ' <td> ' +
-                        "<div class='col-sm-2 col-xs-2'>" + '<a class="id" data-transition="flip" data-id="' + order_products[i].product_id + '" href="products-inner.html?id=' + order_products[i].product_id + '" > ' +   
-						  "<img class='img-responsive' src='" + order_products[i].thumbnail + "'  /> " + "  </a>" +"</div>" +
+                        "<div class='col-sm-2 col-xs-2'>" + '<a class="id" data-transition="flip" data-id="' + order_products[i].product_id + '" href="products-inner.html?id=' + order_products[i].product_id + '" > ' +
+                        "<img class='img-responsive' src='" + order_products[i].thumbnail + "'  /> " + "  </a>" +"</div>" +
                         "<div class='col-sm-10 col-xs-10'> " +
                         '<a class="id" data-transition="flip" data-id="' + order_products[i].product_id + '" href="products-inner.html?id=' + order_products[i].product_id + '" > ' +
                         "<table class='table   products-table' > <tbody>"+
@@ -788,12 +788,12 @@ $(document).ready(function () {
 
                     loop += '<tr>  <td> <a class="id" data-transition="flip" data-id="' + orders[i].id_order + '" href="orders-inner.html?id=' + orders[i].id_order + '" > ' +
                         '<div class="col-sm-10 col-xs-10">' +
-                        '<div class="col-sm-6 col-xs-6"> <span class="order-number clearfix"><strong>Order Id:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed"> ' + orders[i].id_order + '</span> </div>' +
-                        '<div class="col-sm-6 col-xs-6"> <span class="customername clearfix"><strong>Customer Name:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class="text-sm detailed">' + orders[i].customer + '</span></div>' +
-                        '<div class="col-sm-6 col-xs-6"> <span class="order-status clearfix ' + orders[i].status_code + ' "><strong>Order Status:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed">' + orders[i].ord_status + '</span></div>' +
-                        '<div class="col-sm-6 col-xs-6"> <span class="order-date clearfix"><strong>Order Date:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class=" text-sm detailed">' + orders[i].date_add + '</span></div>' +
-                        '<div class="col-sm-6 col-xs-6"> <span class="order-amount clearfix"><strong>Order Amount:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed">' + orders[i].total_paid + '   ' + orders[i].currency_code + '</span> </div>' +
-                        '<div class="col-sm-6 col-xs-6"> <span class="order-products clearfix "><strong>Products Ordered:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed">' + orders[i].count_prods + '</span></div>' +
+                        row_start+   '<div class="col-sm-6 col-xs-6"> <span class="order-number clearfix"><strong>Order Id:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed"> ' + orders[i].id_order + '</span> </div>' + row_end +
+                        row_start+   '<div class="col-sm-6 col-xs-6"> <span class="customername clearfix"><strong>Customer Name:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class="text-sm detailed">' + orders[i].customer + '</span></div>' + row_end +
+                        row_start+   '<div class="col-sm-6 col-xs-6"> <span class="order-status clearfix ' + orders[i].status_code + ' "><strong>Order Status:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed">' + orders[i].ord_status + '</span></div>' + row_end +
+                        row_start+    '<div class="col-sm-6 col-xs-6"> <span class="order-date clearfix"><strong>Order Date:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class=" text-sm detailed">' + orders[i].date_add + '</span></div>' + row_end +
+                        row_start+  '<div class="col-sm-6 col-xs-6"> <span class="order-amount clearfix"><strong>Order Amount:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed">' + orders[i].total_paid + '   ' + orders[i].currency_code + '</span> </div>' + row_end +
+                        row_start+ '<div class="col-sm-6 col-xs-6"> <span class="order-products clearfix "><strong>Products Ordered:</strong> </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed">' + orders[i].count_prods + '</span></div>' + row_end +
 
                         '</div>' +
 
@@ -807,34 +807,7 @@ $(document).ready(function () {
                 loop += '</tbody></table>';
                 $('#delivery-orders .list-content').html(loop);
             }
-            /*success: function (json) {
 
-                loop = "<table class='table  '><tbody>";
-                var orders = json.orders;
-                for (var i in orders) {
-
-                    loop += '<tr>  <td> <a class="id" data-transition="flip" data-id="' + orders[i].id_order + '" href="orders-inner.html?id=' + orders[i].id_order + '" > ' +
-                        '<div class="col-sm-10 col-xs-10">' +
-                        '<div class="col-sm-6 col-xs-6"> <span class="order-number clearfix"> Order Id: </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed"> ' + orders[i].id_order + '</span> </div>' +
-                        '<div class="col-sm-6 col-xs-6"> <span class="customername clearfix"> Customer Name: </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed">' + orders[i].customer + '</span> </div>' +
-                        '<div class="col-sm-6 col-xs-6"> <span class="order-status clearfix ' + orders[i].status_code + ' "> Order Status:</span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed"> ' + orders[i].ord_status + '</span> </div>' +
-                        '<div class="col-sm-6 col-xs-6"> <span class="order-date clearfix"> Order Date: </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed">' + orders[i].date_add + '</span> </div>' +
-                        '<div class="col-sm-6 col-xs-6"> <span class="order-amount clearfix"> Order Amount: </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed"> ' + orders[i].total_paid + '   ' + orders[i].currency_code + '</span> </div>' +
-                        '<div class="col-sm-6 col-xs-6"> <span class="order-products clearfix "> Products Ordered: </span> </div> <div class="col-sm-6 col-xs-6"> <span class="detailed"> ' + orders[i].count_prods + '</span> </div>' +
-                        '</div>' +
-
-                        '<div class="col-sm-2 col-xs-2">' +
-
-
-                        '<span class="order-nav-icon   clearfix"><i class="fa fa-angle-right"></i> </span>' +
-                        '</div>' +
-                        '  </a> </td> </tr>';
-
-
-                }
-                loop += '</tbody></table>';
-                $('#delivery-orders .list-content').html(loop);
-            }*/
         });
     });
 
@@ -909,22 +882,22 @@ $(document).ready(function () {
             success: function (json) {
                 loop = "<table class='table  '><tbody>";
                 var products = json.products;
-                for (var i in products) 
-				{
+                for (var i in products)
+                {
                     loop += '<tr>  <td> ' +
                         "<div class='col-sm-2 col-xs-2'>" +
                         '<a class="id" data-transition="flip" data-id="' + products[i].product_id + '" href="products-inner.html?id=' + products[i].product_id + '" > ' +
                         "<img class='img-responsive' src='" + products[i].thumbnail + "'  /> " + "  </a>" +
                         "</div>" +
-                       "<div class='col-sm-10 col-xs-10'> " + 
-							"<a class='id' data-transition='flip' data-id='" + products[i].product_id + "' href='products-inner.html?id=" + products[i].product_id + "' > " +
-						 		"<div class='col-sm-4 col-xs-4'><span class='title'><strong> Name: </strong></span> </div> <div class='col-sm-8 col-xs-8'> <span class='detailed'>" + products[i].name + "  </span> </div> " +
-								"<div class='col-sm-4 col-xs-4'><span class='title'><strong> Type:</strong> </span> </div> <div class='col-sm-8 col-xs-8'> <span class='detailed'>" + products[i].product_type + " </span>  </div> " +
-								"<div class='col-sm-4 col-xs-4'><span class='title'><strong> Quantity: </strong></span> </div> <div class='col-sm-8 col-xs-8'> <span class='detailed'>" + products[i].quantity + "  </span>  </div> " +
-								"<div class='col-sm-4 col-xs-4'><span class='title'><strong> Price: </strong> </span> </div> <div class='col-sm-8 col-xs-8'> <span class='detailed'>" + products[i].price + " </span>  </div> " +	 
-							'</a> ' +
-                        '</div>' 
-                        ' </td></tr>';
+                        "<div class='col-sm-10 col-xs-10'> " +
+                        "<a class='id' data-transition='flip' data-id='" + products[i].product_id + "' href='products-inner.html?id=" + products[i].product_id + "' > " +
+                        "<div class='col-sm-4 col-xs-4'><span class='title'><strong> Name: </strong></span> </div> <div class='col-sm-8 col-xs-8'> <span class='detailed'>" + products[i].name + "  </span> </div> " +
+                        "<div class='col-sm-4 col-xs-4'><span class='title'><strong> Type:</strong> </span> </div> <div class='col-sm-8 col-xs-8'> <span class='detailed'>" + products[i].product_type + " </span>  </div> " +
+                        "<div class='col-sm-4 col-xs-4'><span class='title'><strong> Quantity: </strong></span> </div> <div class='col-sm-8 col-xs-8'> <span class='detailed'>" + products[i].quantity + "  </span>  </div> " +
+                        "<div class='col-sm-4 col-xs-4'><span class='title'><strong> Price: </strong> </span> </div> <div class='col-sm-8 col-xs-8'> <span class='detailed'>" + products[i].price + " </span>  </div> " +
+                        '</a> ' +
+                        '</div>'
+                    ' </td></tr>';
                 }
                 loop += '</tbody></table>';
                 $('#products .list-content').html(loop);
@@ -998,10 +971,10 @@ $(document).ready(function () {
 
 $(document).on("pageshow", function () { // login
 
-   /* $('.logout').off('click').on("click", function (e) {
-        var firstrun = window.localStorage.getItem("runned");
-        firstrun = null;
+    /* $('.logout').off('click').on("click", function (e) {
+     var firstrun = window.localStorage.getItem("runned");
+     firstrun = null;
 
-    });
-    */
+     });
+     */
 });
