@@ -53,6 +53,8 @@ $(document).bind("mobileinit", function(){
 $(document).bind("mobileinit", function () {
     $.mobile.ajaxLinksEnabled = false;
 });
+
+
 $(document).ready(function () {
     StartApp();
 
