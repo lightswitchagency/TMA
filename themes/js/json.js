@@ -20,9 +20,9 @@ function StartApp() {
         complete: function () {
             $('body .overlay').remove();
         },
-        error:  function (request, status, error) {
-           // alert("You are not connected to the internet.");
-			alert(request.responseText);
+        error: function (xhr) {
+            var jsonResponse = JSON.parse(xhr.responseText);
+            alert(jsonResponse);
         },
         success: function (json) {
             if (json === "auth_error")
