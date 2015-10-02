@@ -20,11 +20,9 @@ function StartApp() {
         complete: function () {
             $('body .overlay').remove();
         },
-        error: function(xhr, textStatus, error)
-        {
-            alert(xhr.statusText);
-            alert(textStatus);
-            alert(error);
+        error:  function (request, status, error) {
+           alert("You are not connected to the internet.");
+			alert(request.responseText);
         },
         success: function (json) {
             if (json === "auth_error")
@@ -40,8 +38,6 @@ function StartApp() {
             }
         }
     });
-
-
 }
 
 $(document).ready(function () {
