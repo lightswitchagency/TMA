@@ -32,7 +32,7 @@ function StartApp() {
             else {
                 var options_shops = "<option  value='' > --Select your shop -- </option>";
                 for (var i in json)
-                    options_shops += '<option data-val="' + json[i].id + '" value="' + json[i].url + '/"> ' + json[i].name + '</option>';
+                    options_shops += '<option data-val="' + json[i].id + '" value="' + json[i].url + '"> ' + json[i].name + '</option>';
                 $('#shop-select, #shop-load').html(options_shops);
             }
         }
