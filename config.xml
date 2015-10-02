@@ -24,7 +24,7 @@
     <preference name="fullscreen" value="false"/>
     <preference name="show-splash-screen-spinner" value="true"/>
     <gap:splash src="splash.png"/>
-    <gap:plugin name="this-npm-plugin" source="npm" version="1.0.0" />
+    <gap:plugin name="cordova-plugin-whitelist" source="npm" version="1.0.0" />
 
     <icon src="icon.png"/>
     <icon src="images/icon-36.png" gap:platform="android" gap:density="ldpi"/>
