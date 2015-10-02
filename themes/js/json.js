@@ -44,12 +44,17 @@ function StartApp() {
 
 }
 
+
+$(document).bind("mobileinit", function(){
+    $.mobile.page.prototype.options.domCache = false;
+});
+$(document).bind("mobileinit", function () {
+    $.mobile.ajaxLinksEnabled = false;
+});
 $(document).ready(function () {
     StartApp();
-    
-    $(document).bind("mobileinit", function () {
-        $.mobile.ajaxLinksEnabled = false;
-    });
+
+
 
     $('.nav-tabs a').tabs();
 
