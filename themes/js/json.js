@@ -57,8 +57,8 @@ $(document).ready(function () {
     });
     StartApp();
 
-    $('.ui-page').live('pagehide',function(){ $(this).remove(); });
-    $.ajaxSetup({ cache: false });
+ //   $('.ui-page').live('pagehide',function(){ $(this).remove(); });
+
     $('.nav-tabs a').tabs();
 
     $(document).on("click", "  a ", function () {
