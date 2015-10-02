@@ -44,18 +44,17 @@ function StartApp() {
 
 }
 
-$.ajaxSetup({ cache: false });
-$(document).bind("mobileinit", function(){
-    $.mobile.page.prototype.options.domCache = false;
-});
 
-
-$(document).bind("mobileinit", function () {
-    $.mobile.ajaxLinksEnabled = false;
-});
 
 
 $(document).ready(function () {
+
+    $.ajaxSetup({ cache: false });
+
+    $(document).bind("mobileinit", function () {
+        $.mobile.ajaxLinksEnabled = false;
+        $.mobile.page.prototype.options.domCache = false;
+    });
     StartApp();
 
     $('.ui-page').live('pagehide',function(){ $(this).remove(); });

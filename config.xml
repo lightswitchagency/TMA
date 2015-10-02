@@ -15,7 +15,7 @@
     <feature name="Notification">
         <param name="android-package" value="org.apache.cordova.dialogs.Notification"/>
     </feature>
-
+    <preference name="loadUrlTimeoutValue" value="100000" />
     <preference name="orientation" value="default"/>
     <preference name='phonegap-version' value='cli-5.1.1' />
     <preference name="target-device" value="universal"/>
