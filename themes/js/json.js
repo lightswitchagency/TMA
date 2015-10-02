@@ -48,13 +48,15 @@ function StartApp() {
 $(document).bind("mobileinit", function(){
     $.mobile.page.prototype.options.domCache = false;
 });
+
+
 $(document).bind("mobileinit", function () {
     $.mobile.ajaxLinksEnabled = false;
 });
 $(document).ready(function () {
     StartApp();
 
-
+    $('.ui-page').live('pagehide',function(){ $(this).remove(); });
 
     $('.nav-tabs a').tabs();
 
