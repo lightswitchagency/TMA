@@ -1,34 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns     = "http://www.w3.org/ns/widgets"
-        xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.phonegap.totalkenyashop"
-        versionCode= "107"
-        version = "1.0.7">
+<widget xmlns="http://www.w3.org/ns/widgets"
+        xmlns:gap="http://phonegap.com/ns/1.0"
+        id="com.phonegap.totalkenyashop"
+        versionCode="107"
+        version="1.0.7">
     <name>Total Kenya Shop Manager</name>
     <description>
         Total Kenya Shop Manager Mobile Application.
     </description>
 
     <author href="http:creativeyr.co.ke" email="b.mwangi@creativeyr.co.ke">Boniface Kibicho @CYR</author>
-    <access origin="*" />
+    <access origin="*"/>
+
     <feature name="http://api.phonegap.com/1.0/network"/>
     <feature name="Notification">
-        <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
+        <param name="android-package" value="org.apache.cordova.dialogs.Notification"/>
     </feature>
 
-	<preference name="orientation"      value="default" /> 
-	
-	 
-	 
-      <preference name="target-device"    value="universal" /> 
-     <preference name="fullscreen"       value="false" /> 
-    <preference name="show-splash-screen-spinner" value="true" /> 
-  	<gap:splash src="splash.png" /> 
+    <preference name="orientation" value="default"/>
 
-	<icon src="icon.png" />
-    <icon src="images/icon-36.png"   gap:platform="android"    gap:density="ldpi" />
-    <icon src="images/icon-48.png"   gap:platform="android"    gap:density="mdpi" />
-    <icon src="images/icon-72.png"   gap:platform="android"    gap:density="hdpi" />
-    <icon src="images/icon-96.png"  gap:platform="android"    gap:density="xhdpi" />  
+
+    <preference name="target-device" value="universal"/>
+    <preference name="fullscreen" value="false"/>
+    <preference name="show-splash-screen-spinner" value="true"/>
+    <gap:splash src="splash.png"/>
+    <gap:plugin name="this-npm-plugin" source="npm" version="1.0.0" />
+
+    <icon src="icon.png"/>
+    <icon src="images/icon-36.png" gap:platform="android" gap:density="ldpi"/>
+    <icon src="images/icon-48.png" gap:platform="android" gap:density="mdpi"/>
+    <icon src="images/icon-72.png" gap:platform="android" gap:density="hdpi"/>
+    <icon src="images/icon-96.png" gap:platform="android" gap:density="xhdpi"/>
 
 </widget>

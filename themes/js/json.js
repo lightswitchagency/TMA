@@ -21,7 +21,7 @@ function StartApp() {
             $('body .overlay').remove();
         },
         error:  function (request, status, error) {
-           alert("You are not connected to the internet.");
+
 			alert(request.responseText);
         },
         success: function (json) {
@@ -38,6 +38,8 @@ function StartApp() {
             }
         }
     });
+
+
 }
 
 $(document).ready(function () {
