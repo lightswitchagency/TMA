@@ -18,8 +18,7 @@
     </feature>
 
     <preference name="orientation" value="default"/>
-
-
+    <preference name='phonegap-version' value='cli-5.1.1' />
     <preference name="target-device" value="universal"/>
     <preference name="fullscreen" value="false"/>
     <preference name="show-splash-screen-spinner" value="true"/>
