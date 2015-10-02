@@ -2,16 +2,15 @@
 <widget xmlns="http://www.w3.org/ns/widgets"
         xmlns:gap="http://phonegap.com/ns/1.0"
         id="com.phonegap.totalkenyashop"
-        versionCode="107"
-        version="1.0.7">
-    <name>Total Kenya Shop Manager</name>
+        versionCode="1522147"
+        version="2.0.0.1">
+    <name>Total Kenya E-Shop Manager</name>
     <description>
-        Total Kenya Shop Manager Mobile Application.
+        Total Kenya E-Shop Manager. For Admins and delivery team to
     </description>
 
-    <author href="http:creativeyr.co.ke" email="b.mwangi@creativeyr.co.ke">Boniface Kibicho @CYR</author>
+    <author href="http:creativeyr.co.ke" email="b.mwangi@creativeyr.co.ke">CreativeYR - Boniface Kibicho</author>
     <access origin="*"/>
-
     <feature name="http://api.phonegap.com/1.0/network"/>
     <feature name="Notification">
         <param name="android-package" value="org.apache.cordova.dialogs.Notification"/>
@@ -22,6 +21,7 @@
     <preference name="target-device" value="universal"/>
     <preference name="fullscreen" value="false"/>
     <preference name="show-splash-screen-spinner" value="true"/>
+
     <gap:splash src="splash.png"/>
     <gap:plugin name="cordova-plugin-whitelist" source="npm" version="1.0.0" />
     <gap:plugin name="push-notification" source="npm"   />

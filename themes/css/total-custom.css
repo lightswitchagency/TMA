@@ -10,8 +10,7 @@ body {
 
 
 
-*{
-  -webkit-box-sizing: border-box;
+*{-webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   
@@ -3935,28 +3934,5 @@ table, .order-status strong{color: #717171 !important;}
 #reason{min-height: 100px;}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#custom-period-select option{background-color:#fff !important}
 
