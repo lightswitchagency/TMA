@@ -1,5 +1,5 @@
 var HASH = "aHR0cDovL2NyZThpdmVkZ2UubmV0L3RvdGFsc2hvcC8=";
-var ROOT_URL = "http://shop.total.co.ke/beta/?connector=mobileassistant&hash=" + HASH;
+var ROOT_URL = "http://shop.total.co.ke/?connector=mobileassistant&hash=" + HASH;
 var APPENDURL = "?connector=mobileassistant&hash=" + HASH;
 var remote_url = "";
 
